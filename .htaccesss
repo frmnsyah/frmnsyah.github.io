@@ -1,0 +1,12 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} ^/(protected)/.* [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule . index.html [L,QSA]
+
+RewriteCond %{REQUEST_URI} ^/(protected)/.* [NC]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule . index.html [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.html [L,QSA]
